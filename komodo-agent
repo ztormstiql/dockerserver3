@@ -1,4 +1,15 @@
-agent install via docker run or docker compose
+# after start of docker server: add komodo agent to connect with komodo
+
+
+#### CHECK DE ENV EN VOLUMES VAN DE DOCKER COMPOSE! DEZE MOETEN WORDEN TOEGEVOEGD! ######
+
+docker run -d \
+  --name komodo-agent \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -p 8120:8120 \
+  ghcr.io/moghtech/komodo-periphery:latest
+
+### agent install via docker run or docker compose
 
 komodo-agent:
     image: ghcr.io/moghtech/komodo-periphery:latest
@@ -12,5 +23,5 @@ komodo-agent:
       - ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}:${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
     environment:
       # Optioneel: geef een naam of beschrijving van de host door
-      KOMODO_AGENT_NAME: dockerserver2
+      KOMODO_AGENT_NAME: dockerserver3
       PERIPHERY_ROOT_DIRECTORY: ${PERIPHERY_ROOT_DIRECTORY:-/etc/komodo}
