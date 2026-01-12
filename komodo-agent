@@ -1,4 +1,6 @@
-# after start of docker server: add komodo agent to connect with komodo
+# after start of docker server: add komodo agent to connect with komodo 
+
+# of de compose in de portainer stack zetten, dan zijn ze apart
 
 
 #### CHECK DE ENV EN VOLUMES VAN DE DOCKER COMPOSE! DEZE MOETEN WORDEN TOEGEVOEGD! ######
